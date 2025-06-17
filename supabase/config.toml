@@ -1,0 +1,29 @@
+
+project_id = "btqokydfhdavjiwgydif"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[auth]
+enabled = true
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["https://btqokydfhdavjiwgydif.supabase.co"]
+jwt_expiry = 3600
+enable_signup = true
+enable_confirmations = false
+
+[functions.create-checkout-session]
+verify_jwt = true
+
+[functions.stripe-webhook]
+verify_jwt = false
+
+[functions.plant-identify]
+verify_jwt = false
+
+[functions.chat-with-plant]
+verify_jwt = true
